@@ -12,6 +12,8 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { SearchScreen } from './src/screens/SearchScreen';
 import { RestaurantScreen } from './src/screens/RestaurantScreen';
 import { FoodDetailScreen } from './src/screens/FoodDetailScreen';
+import React from 'react';
+import { CartScreen } from './src/screens/CartScreen';
 
 
 const switchNavigator = createSwitchNavigator({
@@ -66,8 +68,13 @@ const switchNavigator = createSwitchNavigator({
 //Cart tab Icon
     Cart: {
       screen: createStackNavigator({
-        CartPage: HomeScreen
-      }),
+        CartPage: CartScreen
+      },
+      {
+      defaultNavigationOptions: {
+        headerShown: false
+      }
+    }),
       navigationOptions: {
         tabBarIcon: ({ focused, tintColor }) => {
           let icon = focused == true ? require('./src/images/cart_icon.png') : require('./src/images/cart_n_icon.png')

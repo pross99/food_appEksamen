@@ -16,13 +16,13 @@ const ButtonAddRemove: React.FC<AddRemoveProps> = ({onAdd, unit, onRemove}) => {
 
         <View style={styles.optionsView}>
             <TouchableOpacity style={styles.btnPlusMinus}onPress={() => onRemove()} >
-            <Text style={{fontSize: 20, color: '#f14b5d'}}> -</Text>
+            <Text style={{fontSize: 30, color: '#f14b5d'}}> -</Text>
         </TouchableOpacity>
         <View style={{display: 'flex', justifyContent: 'center', alignItems:'center', width: 40}}>
-            <Text style={{fontSize: 25, fontWeight: '600', textAlign:'center', color: '#f14b5d'}}>{unit}</Text>
+            <Text style={{ fontSize: 25, fontWeight: '600', color: 'black',textAlign: 'center'}}>{unit}</Text>
         </View>
         <TouchableOpacity style={styles.btnPlusMinus} onPress={() => onAdd()}>
-            <Text style={{fontSize: 20, color: '#f14b5d'}}> +</Text>
+            <Text style={{fontSize: 30, color: '#f14b5d'}}> +</Text>
         </TouchableOpacity>
 
         </View>
@@ -65,23 +65,20 @@ const styles = StyleSheet.create({
            backgroundColor: '#f14b5d'},
 
            optionsView: {
-            flex: 1,
-            display: 'flex',
-           flexDirection:"row",
-            justifyContent:'space-between',
-            alignItems:'center',
-           },
+            display: 'flex', 
+        flexDirection: 'row',  
+        justifyContent: 'space-between', 
+        alignItems: 'center', flex: 1},
 
             btnPlusMinus: { 
-                display: 'flex',
-                 justifyContent:'center',
-                alignItems:'center',
-                 borderColor: '#f14b5d',
-                 borderRadius: 10,
-                 borderWidth: 0.5,
-                 height: 58,
-                 width: 38
-                },
+                display: 'flex', 
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 10,
+                borderWidth: 0.5, 
+                borderColor: '#f15b5d', 
+                height: 58, 
+                width: 38},
 })
 
 export {ButtonAddRemove}

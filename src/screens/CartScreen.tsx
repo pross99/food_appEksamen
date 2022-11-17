@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image} from 'react-native'
 import { connect } from 'react-redux'
 import { ApplicationState, FoodModel, ShoppingState, onUpdateCart, UserState } from '../redux'
-import {ButtonWithIcon, FoodCard, FoodCardInfo, SearchBar} from '../components'
+import {ButtonWithIcon, ButtonWithTitle, FoodCard, FoodCardInfo, SearchBar} from '../components'
 import { checkExistence, useNavigation } from '../utils'
 import { FlatList } from 'react-native-gesture-handler'
 
@@ -46,6 +46,10 @@ const _CartScreen: React.FC<CartScreenProps> = (props) => {
         setTotalAmount(total)
     }
 
+    const onValidateOrder = () => {
+        navigate("LoginPage")
+    }
+
 
     if(Cart.length >0) {
 
@@ -73,8 +77,8 @@ return (<View style={styles.container}>
                 <View style={styles.amountView}>
                     <Text style={{fontSize: 18}}>Total</Text>
                     <Text style={{fontSize:18}}>{totalAmount}</Text>
-
                 </View>
+                <ButtonWithTitle title={"Bestil"} onTap={onValidateOrder} height= {50} width={320} />
 
             </View>
  </View>)
@@ -93,7 +97,7 @@ const styles = StyleSheet.create({
 container: { flex: 1, backgroundColor: '#F2F2F2'},
 navigation: { flex: 1,  marginTop: 43, },
 body: { flex: 9, justifyContent: 'center', alignItems: 'center' },
-footer: { flex: 2, backgroundColor: 'cyan', padding:10 },
+footer: { flex: 2, padding:10 },
 amountView: {display:'flex', flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 20, paddingRight: 20}
 })
 

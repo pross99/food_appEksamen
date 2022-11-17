@@ -7,11 +7,25 @@ interface ButtonProps {
     width: number;
     height: number;
     title: string
+    isNoBg?: boolean
  }
 
 
-const ButtonWithTitle: React.FC<ButtonProps> = ({onTap, title,width,height}) => {
-return (
+const ButtonWithTitle: React.FC<ButtonProps> = ({onTap, title,width,height, isNoBg}) => {
+
+    if(isNoBg) {
+        return (
+            <TouchableOpacity style={[styles.btn, {width, height, backgroundColor: 'transparent'} ]}
+               onPress={() => onTap()}
+            >
+                <Text style={{fontSize: 18, color: '#3980D'}}> {title}</Text>
+    
+            </TouchableOpacity>
+        )
+
+    }else{
+
+        return (
         <TouchableOpacity style={[styles.btn, {width, height} ]}
            onPress={() => onTap()}
         >
@@ -19,6 +33,8 @@ return (
 
         </TouchableOpacity>
     )
+    }
+
 }
 
 

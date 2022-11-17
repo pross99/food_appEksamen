@@ -51,6 +51,9 @@ const UserReducer = (state: UserState = initialState, action: UserAction) => {
                     }
                 }
 
+                case 'ON_USER_LOGIN':
+                    return state;
+
         default:
                 return state;
         }

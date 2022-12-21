@@ -30,7 +30,7 @@ return (<View style={styles.container}>
               <Text>{item.category}</Text>
           </View>
           <View style={{ display: 'flex', flex: 5, padding: 10, justifyContent:'space-around', alignItems: 'center'}}>
-              <Text style={{ fontSize: 18, fontWeight: '600', color: '#7C7C7C'}}>{item.price /2} kr,-</Text>
+              <Text style={{ fontSize: 18, fontWeight: '600', color: '#7C7C7C'}}>{item.price} kr,-</Text>
               <ButtonAddRemove 
               onAdd={() => {
                   let unit = isNaN(item.unit) ? 0 : item.unit;

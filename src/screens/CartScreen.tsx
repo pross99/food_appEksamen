@@ -76,7 +76,7 @@ return (<View style={styles.container}>
             <View style={styles.footer}>
                 <View style={styles.amountView}>
                     <Text style={{fontSize: 18}}>Total</Text>
-                    <Text style={{fontSize:18}}>{totalAmount}</Text>
+                    <Text style={{fontSize:18}}>*Total pris*</Text>
                 </View>
                 <ButtonWithTitle title={"Bestil"} onTap={onValidateOrder} height= {50} width={320} />
 
@@ -84,7 +84,7 @@ return (<View style={styles.container}>
  </View>)
     }else{
        return <View style={{flex: 1, display:'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 25, fontWeight: '700'}}> Your cart is empty</Text>
+            <Text style={{fontSize: 25, fontWeight: '700'}}>Din kurv er tom</Text>
 
         </View>
     }

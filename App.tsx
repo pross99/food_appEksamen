@@ -10,7 +10,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { SearchScreen } from './src/screens/SearchScreen';
-import { RestaurantScreen } from './src/screens/RestaurantScreen';
+import { KitchenScreen } from './src/screens/KitchenScreen';
 import { FoodDetailScreen } from './src/screens/FoodDetailScreen';
 import React from 'react';
 import { CartScreen } from './src/screens/CartScreen';
@@ -36,7 +36,7 @@ const switchNavigator = createSwitchNavigator({
       screen: createStackNavigator({
         HomePage: HomeScreen,
         SearchPage: SearchScreen,
-        RestaurantPage: RestaurantScreen,
+        KitchenPage: KitchenScreen,
         FoodDetailPage: FoodDetailScreen,
 
       },{

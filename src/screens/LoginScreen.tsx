@@ -22,10 +22,10 @@ const _LoginScreen: React.FC<LoginProps> = ({onUserSignup, onUserLogin, userRedu
 
     return (
         <View style={styles.container}>
-        <View style={styles.navigation}><Text style={{fontSize: 30}}> Login</Text> </View>
+        <View style={styles.navigation}><Text style={{fontSize: 30}}> Login </Text> </View>
         <View style={styles.body}>
         <TextField placeholder="Email" onTextChange={setEmail}/>
-        <TextField placeholder="Phone" onTextChange={setPhone}  />
+        <TextField placeholder="Phone" onTextChange={setPhone} />
         <TextField placeholder='Password' onTextChange={setPassword}  isSecure= {true}/>
         <ButtonWithTitle title={title} onTap={() => {}} width={340} height = {50} /> 
         <ButtonWithTitle title={!isSignup ? "Ny konto?" : "Har du en konto? Log ind her!"} onTap={() => {}} width={340} height = {50}  isNoBg= {true}/> 
@@ -33,7 +33,7 @@ const _LoginScreen: React.FC<LoginProps> = ({onUserSignup, onUserLogin, userRedu
 
         </View>
 
-        <View style={styles.footer}> </View>
+        <View style={styles.footer}></View>
         
     </View>)}
 

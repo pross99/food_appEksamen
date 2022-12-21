@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image, Dimensions} from 'react-native'
-import { FoodModel, Restaurant } from '../redux';
+import { FoodModel, Kitchen } from '../redux';
 
 
 const screenWidth = Dimensions.get('screen').width
 
-interface RestaurantProps {
+interface KitchenProps {
 
-    item: Restaurant | FoodModel
+    item: Kitchen | FoodModel
     onTap: Function;
  }
-const RestaurantCard: React.FC<RestaurantProps> = ({item,onTap}) => {
+const KitchenCard: React.FC<KitchenProps> = ({item,onTap}) => {
     return (
          <TouchableOpacity style= {styles.container} onPress={() => onTap(item)}>
              <Image style={{ width: screenWidth - 20, height:220, borderRadius:20, backgroundColor: '#EAEAEA'}} 
@@ -30,4 +30,4 @@ container: { width: screenWidth - 20, height:220, justifyContent: 'space-around'
 
 
 
-export {RestaurantCard}
+export {KitchenCard}

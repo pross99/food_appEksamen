@@ -26,7 +26,7 @@ export interface FoodModel {
 
 // Restaurant template
 
-export  interface Restaurant {
+export  interface Kitchen {
     _id: string;
     name: string;
     foodType: string;
@@ -39,7 +39,7 @@ export  interface Restaurant {
 
 export interface FoodAvailability {
     categories: [Category];
-    restaurants: [Restaurant];
+    kitchens: [Kitchen];
     foods: [FoodModel]
 }
 

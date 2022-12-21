@@ -25,16 +25,17 @@ export type ShoppingAction = AvailabilityAction | ShoppingErrorAction | FoodSear
 
 // trigger from components 
 
-export const onAvailability = (postCode: string) => {
+export const onAvailability = () => {
 
     
     return async (dispatch: Dispatch<ShoppingAction>) => {
 
         try {
 
-            const response = await axios.get<FoodAvailability>(`${BASE_URL}/food/availability/${postCode}`)
+            const response = await axios.get<FoodAvailability>(`${BASE_URL}/`)
 
             console.log(response)
+            console.log("response")
 
             if (!response) {
                 dispatch({
@@ -64,14 +65,14 @@ export const onAvailability = (postCode: string) => {
 
 // trigger from components 
 
-export const onSearchFoods = (postCode: string) => {
+export const onSearchFoods = () => {
 
    
     return async (dispatch: Dispatch<ShoppingAction>) => {
 
         try {
 
-            const response = await axios.get<[FoodModel]>(`${BASE_URL}/food/search/${postCode}`)
+            const response = await axios.get<[FoodModel]>(`${BASE_URL}/search`)
 
             console.log(response)
 

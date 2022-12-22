@@ -5,9 +5,10 @@ import {Address} from 'expo-location'
 //category
 
 export interface Category {
+     id: string,
     title: String,
-    icon: String,
-    id: string
+    icon: String
+   
 }
 
 // food template
@@ -26,20 +27,20 @@ export interface FoodModel {
 
 // Restaurant template
 
-export  interface Kitchen {
+export  interface Vendor {
     _id: string;
     name: string;
     foodType: string;
     address: string;
     phone: string;
-    images: string;
+    images: [string];
     foods: [FoodModel]
 
 }
 
 export interface FoodAvailability {
     categories: [Category];
-    kitchens: [Kitchen];
+    vendors: [Vendor];
     foods: [FoodModel]
 }
 
@@ -61,7 +62,11 @@ export interface UserState{
 }
 
 export interface ShoppingState {
-    availability: FoodAvailability,
+
+    availableVendors: [Vendor]
+    availableCategories: [Category]
+
+ //   availability: FoodAvailability,
     availableFoods: [FoodModel]
 
     //other models?

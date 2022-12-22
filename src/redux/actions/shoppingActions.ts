@@ -2,13 +2,17 @@ import axios from "axios";
 import { Address } from "expo-location";
 import { Dispatch } from "react";
 import { BASE_URL } from "../../utils";
-import { FoodAvailability, FoodModel } from "../models";
+import { FoodAvailability, FoodModel, Vendor } from "../models";
 
-// Availability action
+//Availability action
 
 export interface AvailabilityAction {
     readonly type: 'ON_AVAILABILITY',
     payload: FoodAvailability
+}
+export interface VendorAction {
+    readonly type: 'ON_VENDOR',
+    payload: Vendor
 }
 export interface FoodSearchAction {
     readonly type: 'ON_FOODS_SEARCH',
@@ -20,7 +24,9 @@ export interface ShoppingErrorAction {
     payload: any
 }
 
-export type ShoppingAction = AvailabilityAction | ShoppingErrorAction | FoodSearchAction
+
+
+export type ShoppingAction = | ShoppingErrorAction | FoodSearchAction  | AvailabilityAction
 
 
 // trigger from components 
@@ -34,8 +40,8 @@ export const onAvailability = () => {
 
             const response = await axios.get<FoodAvailability>(`${BASE_URL}/`)
 
-            console.log(response)
-            console.log("response")
+            //console.log(response)
+            //console.log("response")
 
             if (!response) {
                 dispatch({
@@ -45,7 +51,8 @@ export const onAvailability = () => {
                 })
             } else {
                 dispatch({
-                    type: 'ON_AVAILABILITY',
+            
+                   type: 'ON_AVAILABILITY',
                     payload: response.data
                 })
             }
@@ -63,9 +70,10 @@ export const onAvailability = () => {
 
 }
 
+
 // trigger from components 
 
-export const onSearchFoods = () => {
+export const onSearchFoods = (postCode: string) => {
 
    
     return async (dispatch: Dispatch<ShoppingAction>) => {

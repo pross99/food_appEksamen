@@ -22,7 +22,7 @@ const _LoginScreen: React.FC<LoginProps> = ({onUserSignup, onUserLogin, userRedu
 
     return (
         <View style={styles.container}>
-        <View style={styles.navigation}><Text style={{fontSize: 30}}> Login </Text> </View>
+        <View style={styles.navigation}><Text style={{fontSize: 30, fontWeight: '400'}}> {title} </Text></View>
         <View style={styles.body}>
         <TextField placeholder="Email" onTextChange={setEmail}/>
         <TextField placeholder="Phone" onTextChange={setPhone} />

@@ -23,13 +23,14 @@ const _SearchScreen: React.FC<SearchScreenProps> = (props) => {
     const [keyword, setKeyword] = useState('')
 
     const { availableFoods } = props.shoppingReducer;
+   
   
     const onTapFood = (item: FoodModel) => {    
         navigate('FoodDetailPage', { food: item})
     }
  
     const { Cart } = props.userReducer;
-    console.log(Cart)
+    //console.log(Cart)
 
 return (<View style={styles.container}>
         <View style={styles.navigation}> 

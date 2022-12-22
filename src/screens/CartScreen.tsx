@@ -21,16 +21,13 @@ const _CartScreen: React.FC<CartScreenProps> = (props) => {
 
     const [totalAmount, setTotalAmount] = useState(0)
 
-    const [isEditing, setIsEditing] = useState(false)
-    const [keyword, setKeyword] = useState('')
 
-    const { availableFoods } = props.shoppingReducer;
   
     const onTapFood = (item: FoodModel) => {    
         navigate('FoodDetailPage', { food: item})
     }
  
-    const { Cart } = props.userReducer;
+    const { Cart, user } = props.userReducer;
 
   useEffect(() => {
     onCalculateAmount()
@@ -76,9 +73,9 @@ return (<View style={styles.container}>
             <View style={styles.footer}>
                 <View style={styles.amountView}>
                     <Text style={{fontSize: 18}}>Total</Text>
-                    <Text style={{fontSize:18}}>*Total pris*</Text>
+                    <Text style={{fontSize:18}}>{totalAmount} kr,-</Text>
                 </View>
-                <ButtonWithTitle title={"Bestil"} onTap={onValidateOrder} height= {50} width={320} />
+                <ButtonWithTitle title={ "Bestil nu" } onTap={onValidateOrder} height= {50} width={320} />
 
             </View>
  </View>)

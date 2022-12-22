@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {View,Text,StyleSheet,Image,Dimensions} from 'react-native'
 import { SearchBar, ButtonWithIcon, CategoryCard, KitchenCard } from "../components";
 import { connect } from 'react-redux'
-import { ApplicationState, FoodModel, onAvailability, onUpdateLocation, Kitchen, ShoppingState, UserState, onSearchFoods } from '../redux'
+import { ApplicationState, FoodModel, onAvailability, onUpdateLocation, Vendor, ShoppingState, UserState, onSearchFoods } from '../redux'
 import { useNavigation } from "../utils";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 
@@ -21,16 +21,22 @@ export const _HomeScreen: React.FC<HomeProps> = (props) => {
 
 
     const { location } = props.userReducer;
-    const { availability } = props.shoppingReducer;
-
-    const {categories, foods, kitchens} = availability
+   // const { availability } = props.shoppingReducer;
+    const { availableVendors } = props.shoppingReducer;
+    const { availableFoods } = props.shoppingReducer;
+    const {availableCategories} = props.shoppingReducer
     
-  //  console.log(foods)
-    console.log(availability)
-    console.log(location)
+   // const {categories, foods, vendors} = availability
+    
+    //console.log(foods)
+    //console.log(availability)
+    //console.log(location)
    // console.log(categories)
-   // console.log(kitchens)
+   // console.log(availability.kitchens)
     console.log("HEJ")
+console.log(availableVendors)
+    console.log(availableFoods)
+
 
     useEffect(() =>{
         props.onAvailability()
@@ -40,7 +46,8 @@ export const _HomeScreen: React.FC<HomeProps> = (props) => {
 
     },[])
 
-    const onTapKitchen = (item: Kitchen) => {
+
+    const onTapKitchen = (item: Vendor) => {
         navigate('KitchenPage', {kitchen: item})
 
     }
@@ -71,7 +78,7 @@ export const _HomeScreen: React.FC<HomeProps> = (props) => {
                    <FlatList
                    horizontal
                    showsHorizontalScrollIndicator={false}
-                   data={categories}
+                   data={availableCategories}
                    renderItem= {({item}) => <CategoryCard item={item} onTap={onTapKitchen} /> }
                    keyExtractor={(item) => `${item.id}`}
                    
@@ -84,7 +91,7 @@ export const _HomeScreen: React.FC<HomeProps> = (props) => {
                    <FlatList
                    horizontal
                    showsHorizontalScrollIndicator={false}
-                   data={kitchens}
+                   data={availableVendors}
                    renderItem= {({item}) => <KitchenCard item={item} onTap={onTapKitchen}/> }
                    keyExtractor={(item) => `${item._id}`}
                    />
@@ -97,7 +104,7 @@ export const _HomeScreen: React.FC<HomeProps> = (props) => {
                    <FlatList 
                      horizontal
                      showsHorizontalScrollIndicator={false}
-                     data={foods}
+                     data={availableFoods}
                      renderItem ={({ item }) =>  <KitchenCard item={item} onTap={onTapFood} /> } 
                      keyExtractor={(item) => `${item._id}`}
                     />

@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, TouchableOpacity, TextInput, Image, ImageBackgro
 import { FlatList } from 'react-native-gesture-handler';
 import { ButtonWithIcon, FoodCard } from '../components';
 import {connect} from 'react-redux'
-import { Kitchen, FoodModel, ApplicationState, onUpdateCart, UserState } from '../redux';
+import { Vendor, FoodModel, ApplicationState, onUpdateCart, UserState } from '../redux';
 import { checkExistence } from '../utils';
 import {useNavigation} from '../utils/useNavigation'
 
@@ -22,7 +22,7 @@ const _KitchenScreen: React.FC<KitchenProps> = (props) => {
 
     const {getParam, goBack} = props.navigation;
 
-    const kitchen = getParam('kitchen') as Kitchen
+    const kitchen = getParam('kitchen') as Vendor
 
     const { navigate } = useNavigation()
 

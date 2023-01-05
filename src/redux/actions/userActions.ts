@@ -66,7 +66,7 @@ export const onUpdateLocation = (location: Address) => {
 export const onUserLogin = (email: string, password: string) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
-        const response = await axios.post<string>(`${BASE_URL}user/login}`, {
+        const response = await axios.post<string>(`${BASE_URL}customer/login}`, {
             email,
             password
         })
@@ -98,7 +98,7 @@ export const onUserLogin = (email: string, password: string) => {
 export const onUserSignup = (email: string, phone: string, password: string) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
-        const response = await axios.post<string>(`${BASE_URL}user/signup}`, {
+        const response = await axios.post<string>(`${BASE_URL}customer/signup}`, {
             email,
             phone,
             password

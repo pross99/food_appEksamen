@@ -32,7 +32,7 @@ const switchNavigator = createSwitchNavigator({
   },
   homeStack: createBottomTabNavigator({
     // Home tab Icon
-    home: {
+    Hjem: {
       screen: createStackNavigator({
         HomePage: HomeScreen,
         SearchPage: SearchScreen,
@@ -53,7 +53,7 @@ const switchNavigator = createSwitchNavigator({
     },
 
 // Offer tab Icon
-    Offer: {
+    Tilbud: {
       screen: createStackNavigator({
         OfferPage: HomeScreen
       }),
@@ -67,7 +67,7 @@ const switchNavigator = createSwitchNavigator({
 
 
 //Cart tab Icon
-    Cart: {
+    Kurv: {
       screen: createStackNavigator({
         CartPage: CartScreen,
         LoginPage: LoginScreen
@@ -86,7 +86,7 @@ const switchNavigator = createSwitchNavigator({
     },
 
 // Account tab Icon
-    Account: {
+    Konto: {
       screen: createStackNavigator({
         AccountPage: HomeScreen,
         LoginPage: LoginScreen

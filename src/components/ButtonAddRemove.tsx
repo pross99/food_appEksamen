@@ -31,7 +31,7 @@ const ButtonAddRemove: React.FC<AddRemoveProps> = ({onAdd, unit, onRemove}) => {
  }else{
     return (
         <TouchableOpacity style={styles.btn} onPress={() => onAdd()}>
-            <Text style={{fontSize: 18, color: '#FFF'}}> Add</Text>
+            <Text style={{fontSize: 18, color: '#FFF'}}> Tilføj</Text>
         </TouchableOpacity>
         )
 
